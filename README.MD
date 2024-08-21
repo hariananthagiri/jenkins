@@ -13,7 +13,7 @@ sudo systemctl status jenkins
 sudo systemctl enable jenkins
 ```
 * junkins runs at 8080 port number
-* browse **ip_address:8080** you san see password/path cat password/path copy it and paste it at jenkins install reqied plugins
+* browse **IP_ADDRESS:8080** you san see password/path cat password/path copy it and paste it at jenkins install reqied plugins
 ```jenkins
 /var/lib/jenkins/secrets/initialAdminPassword
 cat /var/lib/jenkins/secrets/initialAdminPassword
