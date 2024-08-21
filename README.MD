@@ -1,6 +1,6 @@
 ### JENKINS
 - jenkins is a continues intigration tool
-#### setup
+#### SETUP
 * go to jenkins.io select centos
 * to install jenkins use below command
 ```jenkins
@@ -17,5 +17,4 @@ sudo systemctl enable jenkins
 ```jenkins
 /var/lib/jenkins/secrets/initialAdminPassword
 cat /var/lib/jenkins/secrets/initialAdminPassword
-
 ```
