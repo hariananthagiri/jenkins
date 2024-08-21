@@ -6,3 +6,4 @@ sudo yum install jenkins -y
 sudo systemctl start jenkins
 sudo systemctl status jenkins
 sudo systemctl enable jenkins
+cat /var/lib/jenkins/secrets/initialAdminPassword
