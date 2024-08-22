@@ -53,5 +53,36 @@ sudo yum install fontconfig java-17-openjdk -y
 1. decleretive pipeline
 2. scripted pipeline
 - decleretive is the latest version pf pipeline in jenkins
+* **SYNTAX**
+```Jenkins
+pipeline {
+    agent any
+
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building...."
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing...."
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploying...."
+            }
+        }
+    }
+}
+```
+* pipeline is of two types
+1. pipeline script
+2. pipeline script from SCM (Git)
+
+
+
 
 
