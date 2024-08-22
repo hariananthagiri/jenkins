@@ -49,5 +49,9 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 sudo yum install fontconfig java-17-openjdk -y
 ```
+- there are two types of pipeline
+1. decleretive pipeline
+2. scripted pipeline
+- decleretive is the latest version pf pipeline in jenkins
 
 
