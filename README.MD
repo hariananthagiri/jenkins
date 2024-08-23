@@ -18,6 +18,10 @@ sudo systemctl enable jenkins
 /var/lib/jenkins/secrets/initialAdminPassword
 cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
+* **dashboard** where we lunch directly it is a central option everything is done here
+* **configure** we can edit what we configure here
+* **build now** to execute the commands
+
 * everything in jenkins is a job there are two types of jobs 
     1. freestyle
     2. pipeline
@@ -25,6 +29,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 1. freestyle
     * it is nothing but doing everything in UI
     * it has both advantages and disadvantages
+    * we can use agent here by using restrict where this project to be run 
 * **disadvantages**
     * here we dont undastand who did what change it is very deficult to restore back to the narmal stage
     * thats the reson why we switched to pipeline now nobody is using freestyle
@@ -86,13 +91,22 @@ pipeline {
     1. any
     * Execute the Pipeline, or stage, on any available agent. 
     For example: agent any
+2. none
+    * When applied at the top-level of the pipeline block no global agent will be allocated for the entire Pipeline run and each stage section will need to contain its own  agent section. 
+    * For example: agent none
+
+3. label
+    * Execute the Pipeline, or stage, on an agent available in the Jenkins environment with the provided label. For example: agent { label 'my-defined-label' }
+    * Label conditions can also be used: 
+    * For example: agent { label 'my-label1 && my-label2' } or agent { label 'my-label1 || my-label2' }
+4. node
+* agent { node { label 'labelName' } } behaves the same as agent { label 'labelName' }, but node allows for additional options (such as customWorkspace).
 * to add particular agent use below syntax
 ```Jenkins
 agent { node { label 'labelName' } }
 ```
 **example**
 agent { node { label 'AGENT-1' } }
-* but node allows for additional options (such as customWorkspace).
 
 
 
