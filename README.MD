@@ -86,6 +86,7 @@ pipeline {
 * pipeline is of two types
 1. pipeline script
 2. pipeline script from SCM (Git)
+
 * **multypule sections in pipeline**
 1. Agent
     1. any
@@ -108,7 +109,31 @@ agent { node { label 'labelName' } }
 **example**
 agent { node { label 'AGENT-1' } }
 
-
-
-
+* **POST**
+    * The post section defines one or more additional steps that are run upon the completion of a Pipeline’s or stage’s run (depending on the location of the post section within the Pipeline).
+    * it will be added after stages 
+    * post can support any of the following post-condition blocks: 
+        * always, changed, fixed, regression, aborted, failure, success, unstable, unsuccessful, and cleanup.
+* **syntax**
+```Jenkins
+post { 
+        always { 
+            echo 'It will whethere job is sucess or not'
+        }
+          failure { 
+            echo 'It will whethere job is failure'
+        }
+         success { 
+            echo 'It will whethere job is sucess'
+        }
+         unsuccessful { 
+            echo 'It will whethere job is unsucessful'
+        }
+        aborted { 
+            echo 'It will whethere job is aborted'
+        }
+}
+```
+* Conventionally, the post section should be placed at the end of the Pipeline.
+* Post-condition blocks contain steps the same as the steps section.
 

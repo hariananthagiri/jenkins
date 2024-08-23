@@ -18,4 +18,15 @@ pipeline {
             }
         }
     }
+    post { 
+        always { 
+            echo 'It will whethere job is sucess or not'
+        }
+        success { 
+            echo 'It will whethere job is sucess'
+        }
+        failure { 
+            echo 'It will whethere job is failure'
+        }    
+    }     
 }
