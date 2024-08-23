@@ -15,18 +15,19 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Deploying...."
+                error "it is an error"
             }
         }
     }
     post { 
         always { 
-            echo 'It will whethere job is sucess or not'
+            echo 'It will run whethere job is sucess or not'
         }
         success { 
-            echo 'It will whethere job is sucess'
+            echo 'It will run whethere job is sucess'
         }
         failure { 
-            echo 'It will whethere job is failure'
+            echo 'It will run whethere job is failure'
         }    
     }     
 }
