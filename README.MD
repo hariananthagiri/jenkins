@@ -53,7 +53,7 @@ sudo yum install fontconfig java-17-openjdk -y
 1. decleretive pipeline
 2. scripted pipeline
 - decleretive is the latest version pf pipeline in jenkins
-* **SYNTAX**
+* **BASIC SYNTAX**
 ```Jenkins
 pipeline {
     agent any
@@ -81,6 +81,18 @@ pipeline {
 * pipeline is of two types
 1. pipeline script
 2. pipeline script from SCM (Git)
+* **multypule sections in pipeline**
+1. Agent
+    1. any
+    * Execute the Pipeline, or stage, on any available agent. 
+    For example: agent any
+* to add particular agent use below syntax
+```Jenkins
+agent { node { label 'labelName' } }
+```
+**example**
+agent { node { label 'AGENT-1' } }
+* but node allows for additional options (such as customWorkspace).
 
 
 
