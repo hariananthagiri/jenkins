@@ -101,13 +101,21 @@ pipeline {
     * Label conditions can also be used: 
     * For example: agent { label 'my-label1 && my-label2' } or agent { label 'my-label1 || my-label2' }
 4. node
-* agent { node { label 'labelName' } } behaves the same as agent { label 'labelName' }, but node allows for additional options (such as customWorkspace).
-* to add particular agent use below syntax
+    * agent { node { label 'labelName' } } behaves the same as agent { label 'labelName' }, but node allows for additional options (such as customWorkspace).
+    * to add particular agent use below syntax
 ```Jenkins
 agent { node { label 'labelName' } }
 ```
 **example**
 agent { node { label 'AGENT-1' } }
+
+5. options
+    * to enable any new plugin we use it
+* **syntax**
+```Jenkins
+options {
+    plugin name
+}
 
 * **POST**
     * The post section defines one or more additional steps that are run upon the completion of a Pipeline’s or stage’s run (depending on the location of the post section within the Pipeline).
@@ -136,4 +144,26 @@ post {
 ```
 * Conventionally, the post section should be placed at the end of the Pipeline.
 * Post-condition blocks contain steps the same as the steps section.
+
+* **steps** in steps genrelly we write linux commands
+    * ex:- **sh ``` commands ```**
+
+* **commants**
+    * to do commants in Jenkins use **//**
+
+### webhooks
+* to automate the code in junkins when we push code to git
+#### setup
+1. **webhook-setup**
+* **login github ===> settings ===> webhook ===> add webhook ===> give the URL to trigger ===> select event ===> add webhook**
+
+* **URL** 
+```
+jenkins-url/git-webhook/
+```
+* **jenkins-url ===> http://18.204.198.15:8080**
+* **example:-** http://18.204.198.15:8080/git-webhook/
+
+2. **configure-setup**
+* **build triggers ===> select github hook trigger for GITScm pooling ===> apply & save**
 
