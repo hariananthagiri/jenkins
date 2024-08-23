@@ -10,9 +10,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing...."
-                sh```
-                ls -ltr
-                ```
             }
         }
         stage('Deploy') {
