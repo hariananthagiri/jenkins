@@ -117,6 +117,13 @@ agent { node { label 'AGENT-1' } }
 options {
     plugin name
 }
+```
+* **example**
+```Jenkins
+options {
+        ansiColor('xterm')
+    }
+```
 
 * **POST**
     * The post section defines one or more additional steps that are run upon the completion of a Pipeline’s or stage’s run (depending on the location of the post section within the Pipeline).
