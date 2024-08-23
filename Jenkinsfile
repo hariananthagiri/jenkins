@@ -1,5 +1,8 @@
 pipeline {
     agent { node { label 'AGENT-1' } }
+    options {
+        ansiColor('xterm')
+    }
 
     stages {
         stage('Build') {
@@ -10,6 +13,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing...."
+                sh```
+                ls -ltr
+                ```
             }
         }
         stage('Deploy') {

@@ -111,6 +111,7 @@ agent { node { label 'AGENT-1' } }
 
 5. options
     * to enable any new plugin we use it
+    * this option is used under pipeline
 * **syntax**
 ```Jenkins
 options {
