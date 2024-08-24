@@ -16,7 +16,6 @@ pipeline {
                     sh '''
                     ls -ltr
                     pwd
-                    hjhh
                     '''
             }
         }
