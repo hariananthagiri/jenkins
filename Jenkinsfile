@@ -19,6 +19,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying1....'
+                sh '''
+                    ls -ltr
+                    pwd
+                    '''
             }
         }
     }
