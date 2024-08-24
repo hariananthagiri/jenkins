@@ -5,7 +5,7 @@ pipeline {
         } 
     }
     environment {
-        GREETING = hello jenkins
+        GREETING = "hello jenkins"
     }
     options {
         ansiColor('xterm')
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing2....'
+                echo 'Testing....'
                     sh '''
                     ls -ltr
                     pwd
