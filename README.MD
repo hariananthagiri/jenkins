@@ -154,8 +154,8 @@ post {
 * Post-condition blocks contain steps the same as the steps section.
 
 * **steps** in steps genrelly we write linux commands
-    * ex:- **sh ``` commands ```**
-
+    * ex:- **sh ''' commands '''** using single quotes
+* **single quotes are very importent in jenkins **''** **
 * **commants**
     * to do commants in Jenkins use **//**
 
@@ -167,10 +167,10 @@ post {
 
 * **URL** 
 ```
-jenkins-url/git-webhook/
+jenkins-url/github-webhook/
 ```
 * **jenkins-url ===> http://18.204.198.15:8080**
-* **example:-** http://18.204.198.15:8080/git-webhook/
+* **example:-** http://18.204.198.15:8080/github-webhook/
 
 2. **configure-setup**
 * **build triggers ===> select github hook trigger for GITScm pooling ===> apply & save**
