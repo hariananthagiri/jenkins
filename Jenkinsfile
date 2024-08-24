@@ -4,10 +4,13 @@ pipeline {
             label 'AGENT-1' 
         } 
     }
+    environment {
+        GREETING = hello jenkins
+    }
     options {
         ansiColor('xterm')
     }
-    
+    // build
     stages {
         stage('Build') {
             steps {
@@ -20,9 +23,10 @@ pipeline {
                     sh '''
                     ls -ltr
                     pwd
+                    env
                     '''
             }
-        }
+        }  
         stage('Deploy') {
             steps {
                 echo 'Deploying1....'
@@ -33,6 +37,7 @@ pipeline {
             }
         }
     }
+    // post build
     post { 
         always { 
             echo 'It will run whethere job is sucess or not'
