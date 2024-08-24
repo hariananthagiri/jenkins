@@ -13,6 +13,7 @@ pipeline {
                     sh '''
                     ls -ltr
                     pwd
+                    whoami
                     '''
             }
         }
