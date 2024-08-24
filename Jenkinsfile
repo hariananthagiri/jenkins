@@ -37,6 +37,26 @@ pipeline {
             }
         }
     }
+     stage('environment') {
+            steps {
+                sh '''
+                echo 'displaying environment variable'
+                echo "${GREETING}"
+                echo env
+                '''
+            }
+        }
+    }
+    stage('Deploy') {
+            steps {
+                echo 'Deploying1....'
+                sh '''
+                    ls -ltr
+                    pwd
+                    '''
+            }
+    }
+    
     // post build
     post { 
         always { 
