@@ -49,7 +49,7 @@ pipeline {
                     '''
                 }
         }
-        stage('parameter') {
+        stage('parameters') {
             steps {
                 echo 'Parameters....'
                 sh '''
