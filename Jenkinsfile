@@ -15,10 +15,10 @@ pipeline {
             }
         }
         stage('Test') {
-            // input {
-            //     message "should we continue?"
-            //     ok "yes, we should." 
-            // }
+            input {
+                message "should we continue?"
+                ok "yes, we should." 
+            }
             steps {
                 echo 'Testing....'
                     sh '''
