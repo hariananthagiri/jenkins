@@ -8,7 +8,7 @@ pipeline {
         GREETING = "hello jenkins"
     }
     parameters {
-    string(name: 'Name', defaultValue: 'hari krishna', description: 'writeing my name')
+    string(name: 'PERSON', defaultValue: 'hari krishna', description: 'writeing my name')
     }
     // options {
     //     ansiColor('xterm')
@@ -53,7 +53,7 @@ pipeline {
             steps {
                 echo 'Parameters....'
                 sh '''
-                    echo "${params.Name}"
+                    echo "${params.PERSON}"
                 '''
             }
         }
