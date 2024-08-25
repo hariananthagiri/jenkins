@@ -29,10 +29,10 @@ pipeline {
             }
         }  
         stage('Deploy') {
-            // input {
-            //     message "should we continue?"
-            //     ok "yes, we should." 
-            // }
+            input {
+                message "should we continue?"
+                ok "yes, we should." 
+            }
             steps {
                 echo 'Deploying....'
                 sh '''
