@@ -29,6 +29,10 @@ pipeline {
             }
         }  
         stage('Deploy') {
+            input {
+                message "should we continue?"
+                ok "yes, we should." 
+            }
             steps {
                 echo 'Deploying....'
                 sh '''
@@ -39,13 +43,17 @@ pipeline {
         }
     
         stage('environment') {
-                steps {
-                    sh '''
-                    echo 'displaying environment variable'
-                    echo "${GREETING}"
-                    echo env
-                    '''
-                }
+            input {
+                message "should we continue?"
+                ok "yes, we should." 
+            }
+            steps {
+                sh '''
+                echo 'displaying environment variable'
+                echo "${GREETING}"
+                echo env
+                '''
+            }
         }
     //     stage('parameters') {
     //         steps {
