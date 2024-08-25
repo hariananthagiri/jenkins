@@ -52,9 +52,7 @@ pipeline {
         stage('parameters') {
             steps {
                 echo 'Parameters....'
-                sh '''
-                    echo "${params.PERSON}"
-                '''
+                 echo "${params.PERSON}"
             }
         }
     }
