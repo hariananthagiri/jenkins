@@ -15,10 +15,10 @@ pipeline {
             }
         }
         stage('Test') {
-            input {
-                message "should we continue?"
-                ok "yes, we should." 
-            }
+            // input {
+            //     message "should we continue?"
+            //     ok "yes, we should." 
+            // }
             steps {
                 echo 'Testing....'
                     sh '''
@@ -29,10 +29,10 @@ pipeline {
             }
         }  
         stage('Deploy') {
-            input {
-                message "should we continue?"
-                ok "yes, we should." 
-            }
+            // input {
+            //     message "should we continue?"
+            //     ok "yes, we should." 
+            // }
             steps {
                 echo 'Deploying....'
                 sh '''
@@ -43,24 +43,18 @@ pipeline {
         }
     
         stage('environment') {
-            input {
-                message "should we continue?"
-                ok "yes, we should." 
-            }
+            // input {
+            //     message "should we continue?"
+            //     ok "yes, we should." 
+            // }
             steps {
+                echo 'environment variable'
                 sh '''
-                echo 'displaying environment variable'
                 echo "${GREETING}"
                 echo env
                 '''
             }
         }
-    //     stage('parameters') {
-    //         steps {
-    //             echo 'Parameters....'
-    //              echo "${params.PERSON}"
-    //         }
-    //     }
     }
     // post build
     post { 
