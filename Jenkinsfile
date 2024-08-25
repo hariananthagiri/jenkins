@@ -7,6 +7,9 @@ pipeline {
     environment {
         GREETING = "hello jenkins"
     }
+    parameters {
+    string(name: 'Name', defaultValue: 'hari krishna', description: 'writeing my name')
+    }
     options {
         ansiColor('xterm')
     }
@@ -45,6 +48,14 @@ pipeline {
                     echo env
                     '''
                 }
+        }
+        stage('parameter') {
+            steps {
+                echo 'Parameters....'
+                sh '''
+                    echo "${params.Name}"
+                '''
+            }
         }
     }
     // post build
