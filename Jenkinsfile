@@ -47,12 +47,12 @@ pipeline {
                     '''
                 }
         }
-        stage('parameters') {
-            steps {
-                echo 'Parameters....'
-                 echo "${params.PERSON}"
-            }
-        }
+    //     stage('parameters') {
+    //         steps {
+    //             echo 'Parameters....'
+    //              echo "${params.PERSON}"
+    //         }
+    //     }
     }
     // post build
     post { 
