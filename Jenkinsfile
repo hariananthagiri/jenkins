@@ -7,12 +7,6 @@ pipeline {
     environment {
         GREETING = "hello jenkins"
     }
-    parameters {
-    string(name: 'PERSON', defaultValue: 'hari krishna', description: 'writeing my name')
-    }
-    options {
-        ansiColor('xterm')
-    }
     // build
     stages {
         stage('Build') {
@@ -21,6 +15,10 @@ pipeline {
             }
         }
         stage('Test') {
+            input {
+                message: 'should i continue ?'
+                ok: 'yes, continue'
+            }
             steps {
                 echo 'Testing....'
                     sh '''
