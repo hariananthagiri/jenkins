@@ -10,9 +10,9 @@ pipeline {
     parameters {
     string(name: 'PERSON', defaultValue: 'hari krishna', description: 'writeing my name')
     }
-    // options {
-    //     ansiColor('xterm')
-    // }
+    options {
+        ansiColor('xterm')
+    }
     // build
     stages {
         stage('Build') {
