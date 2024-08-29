@@ -11,10 +11,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bulildjob: "pipeline-2", wait: true
                 echo 'Building....'
             }
         }
+        stage ('pipeline-2') {
+            steps {
+                echo "iam runnin pipeline-1 in pipeline-2"
+                bulildjob: "pipeline-2", wait: true
+            }
+}
         stage('Test') {
             input {
                 message "should we continue?"
