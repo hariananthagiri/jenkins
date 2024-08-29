@@ -11,6 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                bulildjob: "pipeline-2", wait: true
                 echo 'Building....'
             }
         }
