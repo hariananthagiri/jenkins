@@ -8,9 +8,9 @@ pipeline {
         GREETING = "hello jenkins"
     }
     parameters {
-        string (name: 'age', defaultValue: "hari krishna", description: 'giveing my age details' )
+        string (name: 'age', defaultValue: "26", description: 'giveing my age details' )
         choice (name: 'Name', choices: ['manu', 'hari', 'shiva', 'mahesh'], description: 'giveing my age details')
-        booleanParam (name: 'condition', defaultValue: 'true', description: 'giveing boolean value')
+        booleanParam (name: 'condition', defaultValue: true, description: 'giveing boolean value')
     }
     // build
     stages {
@@ -37,8 +37,7 @@ pipeline {
         stage('parameters') {
             steps {
                 echo "using parameter variable"
-                echo "${params.Name}"
-                echo "${params.age}"
+                echo " my name is ${params.Name} my age is ${params.age} iam married? {params.condition}"
             }
         } 
          
