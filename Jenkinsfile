@@ -7,6 +7,11 @@ pipeline {
     environment {
         GREETING = "hello jenkins"
     }
+    parameters {
+        string (name: 'age', defaultValue: "hari krishna", description: "giveing my age details" ),
+        choice (name: 'Name', choices ['manu', 'hari', 'shiva', 'mahesh'], description: "giveing my age details"),
+        booleanParam (name: 'condition', defaultValue: 'true', description: 'giveing boolean value')
+    }
     // build
     stages {
         stage('Build') {
@@ -15,19 +20,28 @@ pipeline {
             }
         }
         stage('Test') {
-            input {
-                message "should we continue?"
-                ok "yes, we should." 
-            }
             steps {
                 echo 'Testing....'
-                    sh '''
-                    ls -ltr
-                    pwd
-                    env
-                    '''
             }
-        }  
+        } 
+
+        stage('environment') {
+            steps {
+                echo "using environment variable"
+                sh '''
+                echo "${GREETING}"
+                '''
+            }
+        }
+
+        stage('parameters') {
+            steps {
+                echo "using parameter variable"
+                echo "${params.Name}"
+                echo "${params.age}"
+            }
+        } 
+         
         stage('Deploy') {
             input {
                 message "should we continue?"
@@ -38,16 +52,6 @@ pipeline {
                 sh '''
                     ls -ltr
                     pwd
-                    '''
-            }
-        }
-    
-        stage('environment') {
-            steps {
-                echo "using environment variable"
-                sh '''
-                echo "${GREETING}"
-                printenv
                 '''
             }
         }
