@@ -37,7 +37,7 @@ pipeline {
         stage('parameters') {
             steps {
                 echo "using parameter variable"
-                echo " my name is ${params.Name} my age is ${params.age} iam married? {params.condition}"
+                echo "my name is ${params.Name} my age is ${params.age} iam married? ${params.condition}"
             }
         } 
          
