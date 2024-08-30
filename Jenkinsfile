@@ -14,12 +14,6 @@ pipeline {
                 echo 'Building....'
             }
         }
-        stage ('pipeline-2') {
-            steps {
-                echo "iam runnin pipeline-1 in pipeline-2"
-                bulildjob: "pipeline-2", wait: true
-            }
-}
         stage('Test') {
             input {
                 message "should we continue?"
@@ -49,15 +43,11 @@ pipeline {
         }
     
         stage('environment') {
-            // input {
-            //     message "should we continue?"
-            //     ok "yes, we should." 
-            // }
             steps {
-                echo 'environment variable'
+                echo "using environment variable"
                 sh '''
                 echo "${GREETING}"
-                echo env
+                printenv
                 '''
             }
         }
@@ -66,6 +56,7 @@ pipeline {
     post { 
         always { 
             echo 'It will run whethere job is sucess or not'
+            deleteDir()
         }
         success { 
             echo 'It will run whethere job is sucess'
