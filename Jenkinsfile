@@ -8,8 +8,8 @@ pipeline {
         GREETING = "hello jenkins"
     }
     parameters {
-        string (name: 'age', defaultValue: "hari krishna", description: 'giveing my age details' ),
-        choice (name: 'Name', choices: ['manu', 'hari', 'shiva', 'mahesh'], description: 'giveing my age details'),
+        string (name: 'age', defaultValue: "hari krishna", description: 'giveing my age details' )
+        choice (name: 'Name', choices: ['manu', 'hari', 'shiva', 'mahesh'], description: 'giveing my age details')
         booleanParam (name: 'condition', defaultValue: 'true', description: 'giveing boolean value')
     }
     // build
