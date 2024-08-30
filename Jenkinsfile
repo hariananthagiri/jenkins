@@ -35,13 +35,13 @@ pipeline {
         }
 
         stage('parameters') {
-            script{
-                def Person:"${params.Name}"
-            }
+            // script{
+            //     def Person:"${params.Name}"
+            // }
             steps {
                 echo "using parameter variable"
                 echo "my name is ${params.Name} my age is ${params.age} iam married? ${params.condition}"
-                echo "${Person}"
+                // echo "${Person}"
             }
         } 
          
