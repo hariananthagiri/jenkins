@@ -46,8 +46,8 @@ pipeline {
                 echo "using groovy script"
                 script{
                     def Person = "${params.Name}"
+                     echo "${Person}"
                 }
-                echo "${Person}"
             }
         } 
          
