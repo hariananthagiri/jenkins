@@ -25,7 +25,7 @@ pipeline {
             }
         } 
 
-        stage('environment') {
+        stage('Environment') {
             steps {
                 echo "using environment variable"
                 sh '''
@@ -34,7 +34,15 @@ pipeline {
             }
         }
 
-        stage('parameters') {
+        stage('Parameters') {
+            steps {
+                echo "using parameter variable"
+                echo "my name is ${params.Name} my age is ${params.age} iam married? ${params.condition}"
+                echo "${Person}"
+            }
+        } 
+
+        stage('Groovy script') {
             script{
                 def Person = "${params.Name}"
             }
