@@ -43,12 +43,11 @@ pipeline {
         } 
 
         stage('Groovy script') {
-            script{
-                def Person = "${params.Name}"
-            }
             steps {
-                echo "using parameter variable"
-                echo "my name is ${params.Name} my age is ${params.age} iam married? ${params.condition}"
+                script{
+                    def Person = "${params.Name}"
+                }
+                echo "using groovy script"
                 echo "${Person}"
             }
         } 
